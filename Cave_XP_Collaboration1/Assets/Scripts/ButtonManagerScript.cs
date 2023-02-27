@@ -13,9 +13,9 @@ public class ButtonManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startMenu.SetActive(true);
-        optionMenu.SetActive(false);
-        exitMenu.SetActive(false);
+        if(startMenu != null) startMenu.SetActive(true);
+        if (optionMenu != null) optionMenu.SetActive(false);
+        if(exitMenu != null) exitMenu.SetActive(false);
     }
 
     public void StartButton()

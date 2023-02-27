@@ -42,10 +42,11 @@ public class SceneManagerScript : MonoBehaviour
             {
                 SceneManager.LoadScene("Scene3_WareHouse");
             }
-            /*else if (gameObject.CompareTag("ToControl"))
+            else if (hit.collider.gameObject.CompareTag("ToControl"))
             {
-                SceneManager.LoadScene("Controll_monstor_room");
-            }*/
+                Debug.Log("´©¸§");
+                SceneManager.LoadScene("Scene1_ControllRoom");
+            }
             else if (hit.collider.gameObject.CompareTag("Puzzle1"))
             {
                 SceneManager.LoadScene("Mini1_WireGame");

@@ -40,7 +40,8 @@ public class CameraManagerScript : MonoBehaviour
         telposGameObj = GameObject.Find("camera_ZoomPos");
         zoomObj = GameObject.Find("zoom_click");
         backZoomBtn = GameObject.Find("zoomBackBtn");
-        backZoomBtn.SetActive(false);
+        if(backZoomBtn == null){}
+        else backZoomBtn.SetActive(false);
         cameraDefaultPos = GameObject.Find("camera_defaultPos");
     }
 
