@@ -35,6 +35,12 @@ public class GameManangerScript : MonoBehaviour
     private GameObject s_foot02;
     private GameObject s_foot03;
 
+    //미니게임 클리어 확인
+    public static bool p1Clear = false;
+    public bool p2Clear = false;
+    public bool p3Clear = false;
+
+    private GameObject drawer;
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //씬 로드 될 때마다 실행
@@ -49,6 +55,7 @@ public class GameManangerScript : MonoBehaviour
         s_foot01 = GameObject.Find("S_Footprint_01");
         s_foot02 = GameObject.Find("S_Footprint_02");
         s_foot03 = GameObject.Find("S_Footprint_03");
+        drawer = GameObject.Find("updrawer");
         if (inventoryPanel)
             inventoryPanel.SetActive(activeInven);      //인벤 비활성화
 
@@ -113,7 +120,12 @@ public class GameManangerScript : MonoBehaviour
             s_foot02.SetActive(getFoot02);
             s_foot03.SetActive(getFoot03);
         }
-       
+
+        if (drawer)
+        {
+            if (p1Clear) drawer.SetActive(false);
+        }
+
     }
     public static void TimeSub(int getTime)
     {

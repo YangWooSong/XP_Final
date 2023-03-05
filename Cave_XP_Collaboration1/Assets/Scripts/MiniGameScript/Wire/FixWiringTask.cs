@@ -124,6 +124,7 @@ public class FixWiringTask : MonoBehaviour
         if (isAllComplete)
         {
             Debug.Log("clear");
+            GameManangerScript.p1Clear = true;
             GameManangerScript.TimeAdd((int)MiniGameTimer.timeDuration);
             GameManangerScript.wireClear = true;
         }

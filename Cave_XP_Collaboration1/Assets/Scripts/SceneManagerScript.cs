@@ -49,7 +49,7 @@ public class SceneManagerScript : MonoBehaviour
             }
             else if (hit.collider.gameObject.CompareTag("Puzzle1"))
             {
-                SceneManager.LoadScene("Mini1_WireGame");
+                 SceneManager.LoadScene("Mini1_WireGame");
             }
             else if (hit.collider.gameObject.CompareTag("Puzzle2"))
             {

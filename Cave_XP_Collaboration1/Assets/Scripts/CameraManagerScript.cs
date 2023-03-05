@@ -13,6 +13,7 @@ public class CameraManagerScript : MonoBehaviour
     private GameObject backZoomBtn;
     private GameObject cameraDefaultPos1;
     private GameObject cameraDefaultPos2;
+    private GameObject puzzle1;
 
     private void Awake()
     {
@@ -39,6 +40,11 @@ public class CameraManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (GameObject.Find("Puzzle1"))
+        {
+            puzzle1 = GameObject.Find("Puzzle1");
+            puzzle1.SetActive(false);
+        }
         mainCam = Camera.main;
         telposGameObj1 = GameObject.Find("camera_ZoomPos1");
         telposGameObj2 = GameObject.Find("camera_ZoomPos2");
@@ -76,6 +82,7 @@ public class CameraManagerScript : MonoBehaviour
                     {
                         mainCam.gameObject.transform.position = telposGameObj2.transform.position;
                         mainCam.gameObject.transform.rotation = telposGameObj2.transform.rotation;
+                        if(puzzle1) puzzle1.SetActive(true);
                     }
                     else if (hit.transform.GetSiblingIndex() == 2)
                     {
