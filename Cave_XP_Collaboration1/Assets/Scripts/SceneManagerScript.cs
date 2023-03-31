@@ -4,13 +4,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+
+
 public class SceneManagerScript : MonoBehaviour
 {
+    private GameObject GameManagerObj;
     private Camera currentCamera;
     private Transform[] cameraPosition = new Transform[2];
 
     int i;
     RaycastHit hit;
+
+    int pointerID;
+
+
+
 
     void Start()
     {
@@ -21,12 +29,24 @@ public class SceneManagerScript : MonoBehaviour
             cameraPosition[0] = GameObject.Find("CameraPosition0").transform;
             cameraPosition[1] = GameObject.Find("CameraPosition1").transform;
         }
+#if UNITY_EDITOR
+
+        pointerID = -1; //PC나 유니티 상에서는 -1
+
+#elif UNITY_IOS || UNITY_IPHONE
+
+        pointerID = 0;  // 휴대폰이나 이외에서 터치 상에서는 0 
+
+#endif
+
     }
 
     private void Update()
     {
+
+
         Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(pointerID))
         {
             if (hit.collider.gameObject.CompareTag("ToSetting"))
             {
@@ -44,8 +64,8 @@ public class SceneManagerScript : MonoBehaviour
             }
             else if (hit.collider.gameObject.CompareTag("ToControl"))
             {
-                Debug.Log("누름");
                 SceneManager.LoadScene("Scene1_ControllRoom");
+
             }
             else if (hit.collider.gameObject.CompareTag("Puzzle1"))
             {

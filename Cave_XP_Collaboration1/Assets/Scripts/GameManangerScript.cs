@@ -13,7 +13,7 @@ public class GameManangerScript : MonoBehaviour
 
     private GameObject QuitBtn;
 
-    private GameObject inventoryPanel;   //인벤토리 패널
+    public GameObject inventoryPanel;   //인벤토리 패널
     public static bool activeInven = false;       //인벤 패널 활성화 상태
     private GameObject invenBtn;
 
@@ -40,6 +40,7 @@ public class GameManangerScript : MonoBehaviour
     public bool p2Clear = false;
     public bool p3Clear = false;
 
+    private GameObject[] gameManagers;
     private GameObject drawer;
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -64,6 +65,9 @@ public class GameManangerScript : MonoBehaviour
             invenBtn.GetComponent<Button>().onClick.AddListener(getInvenButton);
         }
 
+        gameManagers = GameObject.FindGameObjectsWithTag("GameManager");
+        if (gameManagers.Length > 1)
+            Destroy(gameManagers[1]);
 
     }
     void OnEnable()

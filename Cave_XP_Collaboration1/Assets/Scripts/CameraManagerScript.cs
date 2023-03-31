@@ -14,6 +14,7 @@ public class CameraManagerScript : MonoBehaviour
     private GameObject cameraDefaultPos1;
     private GameObject cameraDefaultPos2;
     private GameObject puzzle1;
+    private int pointerID;
 
     private void Awake()
     {
@@ -59,12 +60,23 @@ public class CameraManagerScript : MonoBehaviour
             telposGameObj3 = GameObject.Find("camera_ZoomPos3");
         }
 
+
+#if UNITY_EDITOR
+
+        pointerID = -1; //PC나 유니티 상에서는 -1
+
+#elif UNITY_IOS || UNITY_IPHONE
+
+        pointerID = 0;  // 휴대폰이나 이외에서 터치 상에서는 0 
+
+#endif
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject(pointerID))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

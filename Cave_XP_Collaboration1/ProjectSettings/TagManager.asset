@@ -15,6 +15,7 @@ TagManager:
   - telpos
   - Puzzle1
   - ToControl
+  - GameManager
   layers:
   - Default
   - TransparentFX
