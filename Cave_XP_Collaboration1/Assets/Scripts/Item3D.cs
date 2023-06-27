@@ -7,6 +7,11 @@ using UnityEngine.EventSystems;
 
 public class Item3D : MonoBehaviour
 {
+    private GameObject gameManager;
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager");
+    }
 
     private void OnMouseDown()
     {
@@ -16,36 +21,45 @@ public class Item3D : MonoBehaviour
        
             if (gameObject.name == "nametag")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getNameTag = true;
-
+                gameManager.GetComponent<GameManangerScript>().getNameTag = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "footprint1")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getFoot01 = true;
+                gameManager.GetComponent<GameManangerScript>().getFoot01 = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "footprint2")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getFoot02 = true;
+                gameManager.GetComponent<GameManangerScript>().getFoot02 = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "footprint3")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getFoot03 = true;
+                gameManager.GetComponent<GameManangerScript>().getFoot03 = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "riphand")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getRipHand = true;
+                gameManager.GetComponent<GameManangerScript>().getRipHand = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "monsterFootprint")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getMonsterFoot = true;
+                gameManager.GetComponent<GameManangerScript>().getMonsterFoot = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if (gameObject.name == "handcloth")
             {
-                GameObject.Find("GameManager").GetComponent<GameManangerScript>().getHandcloth = true;
+                gameManager.GetComponent<GameManangerScript>().getHandcloth = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
             }
             else if(gameObject.name == "saw")
             {
-               GameObject.Find("GameManager").GetComponent<GameManangerScript>().getSaw = true;
+                gameManager.GetComponent<GameManangerScript>().getSaw = true;
+                gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 5;
             }
             Destroy(gameObject);
 

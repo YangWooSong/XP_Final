@@ -389,14 +389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 670828891797843425, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
-      propertyPath: m_TagString
-      value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 670828891797843428, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
-      propertyPath: inventoryPanel
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 670828891797843430, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -441,9 +433,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4377833894520041522, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
-    - {fileID: 670828891797843431, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6799b3006299cfb4098d3b968d11ac4c, type: 3}
 --- !u!1001 &129320768
 PrefabInstance:

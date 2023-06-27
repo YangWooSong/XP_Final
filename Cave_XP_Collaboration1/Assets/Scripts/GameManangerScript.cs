@@ -34,14 +34,24 @@ public class GameManangerScript : MonoBehaviour
     private GameObject s_foot01;
     private GameObject s_foot02;
     private GameObject s_foot03;
+    public int itemCount = 0;
 
     //미니게임 클리어 확인
     public static bool p1Clear = false;
     public bool p2Clear = false;
     public bool p3Clear = false;
 
+
+    //엔딩조건
+    public bool happyEnding = false;
+    public bool normalEnding = false;
+    public bool hiddenEnding = false;
+    public bool badEnding = false;
+
     private GameObject[] gameManagers;
     private GameObject drawer;
+
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         //씬 로드 될 때마다 실행
