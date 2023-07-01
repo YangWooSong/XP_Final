@@ -23,36 +23,50 @@ public class Item3D : MonoBehaviour
             {
                 gameManager.GetComponent<GameManangerScript>().getNameTag = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 0;
             }
             else if (gameObject.name == "footprint1")
             {
                 gameManager.GetComponent<GameManangerScript>().getFoot01 = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 1;
             }
             else if (gameObject.name == "footprint2")
             {
                 gameManager.GetComponent<GameManangerScript>().getFoot02 = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 1;
             }
             else if (gameObject.name == "footprint3")
             {
                 gameManager.GetComponent<GameManangerScript>().getFoot03 = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 1;
             }
             else if (gameObject.name == "riphand")
             {
                 gameManager.GetComponent<GameManangerScript>().getRipHand = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 2;
             }
             else if (gameObject.name == "monsterFootprint")
             {
                 gameManager.GetComponent<GameManangerScript>().getMonsterFoot = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 3;
             }
             else if (gameObject.name == "handcloth")
             {
                 gameManager.GetComponent<GameManangerScript>().getHandcloth = true;
                 gameManager.GetComponent<GameManangerScript>().itemCount += 1;
+                gameManager.GetComponent<Dialogue>().sceneNum = 5;
+                gameManager.GetComponent<Dialogue>().d_num = 4;
             }
             else if(gameObject.name == "saw")
             {

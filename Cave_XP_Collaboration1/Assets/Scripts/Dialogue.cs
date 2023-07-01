@@ -16,12 +16,14 @@ public class Dialogue : MonoBehaviour
 
     public GameObject dialoguePanel;
     public TextMeshProUGUI text;
-
+    public Button btn;
     // Start is called before the first frame update
     void Start()
     {
         dialoguePanel = GameObject.Find("Dialogue");
         dialoguePanel.SetActive(false);
+        btn = dialoguePanel.GetComponent<Transform>().GetChild(1).GetComponent<Button>();
+        btn.onClick.AddListener(D_close);
         text = dialoguePanel.GetComponent<Transform>().GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
